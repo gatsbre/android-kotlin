@@ -12,6 +12,7 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -199,6 +200,10 @@ class LoginActivity : AppCompatActivity() {
             "$welcome $displayName",
             Toast.LENGTH_LONG
         ).show()
+
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {
