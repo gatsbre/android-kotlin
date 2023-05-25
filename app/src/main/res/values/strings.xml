@@ -19,8 +19,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_home">Recipes</string>
+    <string name="menu_sharpen">How to sharpen</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_logout">Logout</string>
 
@@ -28,4 +28,6 @@
     <string name="ingredients">Ingredients</string>
     <string name="chicken_curry">Chicken curry</string>
     <string name="chicken_curry_ingredients">Coriander, cumin, turmeric, fennel seeds, cinnamon, pepper, ground mustard, ground cloves and cayenne pepper</string>
+    <string name="how_to_sharpen">How to sharpen a knife</string>
+    <string name="how_to_sharpen_title">How to sharpen</string>
 </resources>

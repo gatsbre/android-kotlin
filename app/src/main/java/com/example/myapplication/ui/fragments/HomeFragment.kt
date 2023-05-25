@@ -1,22 +1,17 @@
-package com.example.myapplication.ui.home
+package com.example.myapplication.ui.fragments
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.databinding.FragmentHomeBinding
-import com.example.myapplication.ui.MyAdapter
+import com.example.myapplication.data.MyAdapter
+import com.example.myapplication.data.model.Recipe
 import com.google.firebase.database.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 class HomeFragment : Fragment() {

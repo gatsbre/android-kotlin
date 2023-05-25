@@ -1,17 +1,14 @@
-package com.example.myapplication.ui
+package com.example.myapplication.data
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.ui.home.Recipe
-import java.util.*
+import com.example.myapplication.data.model.Recipe
 import kotlin.collections.ArrayList
 
 class MyAdapter(private var recipeList : ArrayList<Recipe>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
