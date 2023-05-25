@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.navigation.NavigationView
@@ -42,11 +43,19 @@ class MainActivity : AppCompatActivity() {
             when (menuItem.itemId) {
                 R.id.nav_logout -> {
                     logout()
+                    this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+                    true
+                }
+                R.id.nav_sharpen -> {
+                    drawerLayout.closeDrawers()
+                    menuItem.onNavDestinationSelected(navController)
+                    this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
                     true
                 }
                 else -> {
-                    menuItem.onNavDestinationSelected(navController)
                     drawerLayout.closeDrawers()
+                    menuItem.onNavDestinationSelected(navController)
+                    this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
                     true
                 }
             }
