@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "34009153088",
+    "firebase_url": "https://kotlin-food-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "kotlin-food",
     "storage_bucket": "kotlin-food.appspot.com"
   },
@@ -14,7 +15,44 @@
       },
       "oauth_client": [
         {
-          "client_id": "34009153088-6haf8sefnniiqsdsad5n3r9o3ltb5a15.apps.googleusercontent.com",
+          "client_id": "34009153088-217j5hrrlpgogb3bvkc72l12ch9rl1ih.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "70ecd033bb47a701d9023b54086d9220057a17a6"
+          }
+        },
+        {
+          "client_id": "34009153088-rtr86ds9akgjinff7p2v5m5m73n9rs8j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkG67FFFcY1Z5f6qakryjf68MOrKihkAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34009153088-6haf8sefnniiqsdsad5n3r9o3ltb5a15.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34009153088:android:26234ca2cf28e0f3ca69a5",
+        "android_client_info": {
+          "package_name": "com.example.robandwiki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34009153088-rtr86ds9akgjinff7p2v5m5m73n9rs8j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

@@ -23,4 +23,9 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_logout">Logout</string>
+
+    <string name="recipe_name">Recipe name</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="chicken_curry">Chicken curry</string>
+    <string name="chicken_curry_ingredients">Coriander, cumin, turmeric, fennel seeds, cinnamon, pepper, ground mustard, ground cloves and cayenne pepper</string>
 </resources>

@@ -1,42 +1,67 @@
 package com.example.myapplication.ui.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentHomeBinding
+import com.example.myapplication.ui.MyAdapter
+import com.google.firebase.database.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class HomeFragment : Fragment() {
-
-    private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private lateinit var dbref: DatabaseReference
+    private lateinit var recipeRecyclerView: RecyclerView
+    private lateinit var recipeArrayList: ArrayList<Recipe>
+    private lateinit var searchBarView: SearchView
+    private lateinit var adapter: MyAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        recipeRecyclerView = view.findViewById(R.id.recipe_list)
+        recipeRecyclerView.layoutManager = LinearLayoutManager(activity)
+        recipeRecyclerView.setHasFixedSize(true)
+        recipeArrayList = arrayListOf<Recipe>()
+        recipeRecyclerView.adapter = MyAdapter(recipeArrayList)
+        getRecipeData()
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return view
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+
+    
+    private fun getRecipeData() {
+        dbref = FirebaseDatabase.getInstance().getReference("recipes")
+        dbref.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    for (recipeSnapshot in snapshot.children) {
+                        val recipe = recipeSnapshot.getValue(Recipe::class.java)
+                        recipeArrayList.add(recipe!!)
+                    }
+                    recipeRecyclerView.adapter?.notifyDataSetChanged()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                //
+            }
+        })
     }
+
 }
