@@ -44,6 +44,7 @@ class HomeFragment : Fragment() {
         dbref = FirebaseDatabase.getInstance().getReference("recipes")
         dbref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                recipeArrayList.clear()
                 if (snapshot.exists()) {
                     for (recipeSnapshot in snapshot.children) {
                         val recipe = recipeSnapshot.getValue(Recipe::class.java)
@@ -54,7 +55,7 @@ class HomeFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                //
+                // Not implemented yet
             }
         })
     }
